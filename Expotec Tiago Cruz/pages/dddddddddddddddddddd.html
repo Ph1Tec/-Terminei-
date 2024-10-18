@@ -1,0 +1,199 @@
+<html><head><base href="https://france-quiz.websim.org/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="Expotec.css">
+<title>Quiz sobre a França</title>
+<link rel="icon" href="eiffel-tower.png" type="image/png">
+<style>
+  #back {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .quiz-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+  #titulo {
+    color: #003399;
+    text-align: center;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  button {
+    background-color: #ffffff;
+    border: 2px solid #003399;
+    color: #003399;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    background-color: #003399;
+    color: #ffffff;
+  }
+  #result {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  #next-btn {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #003399;
+    color: #ffffff;
+  }
+  #next-btn:hover {
+    background-color: #002266;
+  }
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .progress {
+    width: 0%;
+    height: 100%;
+    background-color: #003399;
+    transition: width 0.5s ease-in-out;
+  }
+</style>
+</head>
+<body id="back" >
+  
+  
+
+<div class="quiz-container">
+  <h1 id="titulo">Quiz sobre a França</h1>
+  <div id="quiz"></div>
+  <div id="result"></div>
+  <button id="next-btn" style="display: none;">Próxima Pergunta</button>
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+  </div>
+</div>
+
+<script>
+const quizData = [
+  {
+    question: "Qual é a capital da França?",
+    options: ["Paris", "Londres", "Berlim", "Madrid"],
+    correct: 0
+  },
+  {
+    question: "Qual é o prato nacional da França?",
+    options: ["Pizza", "Sushi", "Coq au Vin", "Paella"],
+    correct: 2
+  },
+  {
+    question: "Qual é o monumento mais famoso da França?",
+    options: ["Big Ben", "Coliseu", "Torre Eiffel", "Estátua da Liberdade"],
+    correct: 2
+  },
+  {
+    question: "Qual é a moeda oficial da França?",
+    options: ["Libra", "Dólar", "Franco", "Euro"],
+    correct: 3
+  },
+  {
+    question: "Quem pintou a Mona Lisa, exposta no Louvre?",
+    options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+    correct: 2
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const quizElement = document.getElementById('quiz');
+const resultElement = document.getElementById('result');
+const nextButton = document.getElementById('next-btn');
+const progressBar = document.getElementById('progress');
+
+function loadQuestion() {
+  const question = quizData[currentQuestion];
+  let quizHtml = `<div class="question"><h2>${question.question}</h2></div>`;
+  quizHtml += '<div class="options">';
+  
+  for (let i = 0; i < question.options.length; i++) {
+    quizHtml += `<button onclick="checkAnswer(${i})">${question.options[i]}</button>`;
+  }
+  
+  quizHtml += '</div>';
+  quizElement.innerHTML = quizHtml;
+  resultElement.innerHTML = '';
+  nextButton.style.display = 'none';
+  updateProgress();
+}
+
+function checkAnswer(answer) {
+  const question = quizData[currentQuestion];
+  if (answer === question.correct) {
+    score++;
+    resultElement.innerHTML = '<p style="color: green;">Correto!</p>';
+  } else {
+    resultElement.innerHTML = `<p style="color: red;">Incorreto. A resposta correta é: ${question.options[question.correct]}</p>`;
+  }
+  disableButtons();
+  nextButton.style.display = 'block';
+}
+
+function disableButtons() {
+  const buttons = document.querySelectorAll('.options button');
+  buttons.forEach(button => {
+    button.disabled = true;
+  });
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < quizData.length) {
+    loadQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  quizElement.innerHTML = `<h2>Você acertou ${score} de ${quizData.length} perguntas!</h2>`;
+  nextButton.style.display = 'none';
+  resultElement.innerHTML = '<p>Parabéns por completar o quiz sobre a França!</p>';
+}
+
+function updateProgress() {
+  const progress = ((currentQuestion + 1) / quizData.length) * 100;
+  progressBar.style.width = `${progress}%`;
+}
+
+nextButton.addEventListener('click', nextQuestion);
+
+
+       
+loadQuestion();
+</script>
+<script src="Expotec.Js"></script>
+</body>
+</html>

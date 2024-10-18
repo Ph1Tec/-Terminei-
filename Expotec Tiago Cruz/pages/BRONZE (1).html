@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRONZE</title>
+    <link rel="stylesheet" href="Expotec.css">
+    <link rel="icon" href="eiffel-tower.png" type="image/png">
+    <style>
+
+
+
+.TEXTO
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+     
+    font-size: 30PX;
+}
+
+.containerBotao
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+.button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: blue;
+  transition: all 1000ms;
+  font-size: 15px;
+  overflow: hidden;
+  outline: 2px solid blue;
+}
+
+button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #20398b;
+  box-shadow: 4px 5px 17px -4px blue;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: red;
+  border-color: red;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+button:hover::before {
+  width: 200%;
+}
+
+
+
+
+table
+{
+    width: 800px;
+}
+
+td
+{
+    border: 3px solid black;
+    padding: 10px;
+}
+tr
+{
+    text-align: center;
+   
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.lista
+{
+    
+ display: flex;
+ flex-direction: row;
+ justify-content: space-evenly;
+
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+           <a  class="logo" href="Expotec.html">FrenchStyle</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+    
+            <ul  class="nav-list">
+                <li><a href="Expotec.html">Inicio</a></li>
+                <li><a href="Expotec (1)222222foi.html">França</a></li>
+                <li><a href="frança2.html">História</a></li>
+                <li><a href="TRABALHO FEITO.html">Jogadores</a></li>
+                <li><a href="olimpíadas (2).html">Medalhas</a></li>
+                <li><a href="dddddddddddddddddddd.html">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>   
+<br>    <BR>
+    <div class="containerBotao">
+   <a href="olimpíadas (2).html"> <button class="button">VOLTAR</button></a>
+    </div>
+    <br><br>
+
+    <div class="TEXTO"> AQUI VOCÊ PODERÁ VER A LISTA COMPLETA DAS MODALIDADES EM QUE A FRANÇA CONQUISTOU MEDALHAS DE BRONZE 🥉</div>
+
+    <BR><BR>
+    <DIV class="lista">
+    <table>
+        <tr><td>BOXE: Djamili-Dini Aboudou Moindze</td></tr>
+        <tr><td>CICLISMO BMX FREESTYLE: Anthony Jeanjean</td></tr>
+        <tr><td>CICLISMO BMX RACING: Romain Mahieu</td></tr>
+        <tr><td>CICLISMO DE ESTRADA: Christophe Laporte</td></tr>
+        <tr><td>ESGRIMA (2x): Florete por equipes masculino, Sabre por equipes masculinos</td></tr>
+        <tr><td>HIPISMO: Saltos por Equipes</td></tr>
+        <tr><td>JUDÔ (6x): Shirine Boukli, Amandine Buchad, Sarah Leonie, Cysique, Clarisse Agbegnenou, Romane Dicko, Maxime-Gael Ngayap Hambou</td></tr>
+        <tr><td>NATAÇÃO (2x): Florent Manaudou, Revezamento 4x100m medley masculino</td></tr>
+        <tr><td>SURFE: Johanne Defay</td></tr>
+        <tr><td>TAEKWONDO: Cyrian Ravet</td></tr>
+        <tr><td>TÊNIS DE MESA: Felix Lebrun, equipes masculinas</td></tr>
+        <tr><td>TIRO COM ARCO: Lisa Barbelin</td></tr>
+        <tr><td>TRIATLO: Leo Bergere</td></tr>
+        <tr><td>VELA: Steyaert/Picon</td></tr>
+       
+
+     
+    </table>
+</DIV>
+
+<br><br>
+
+<script src="Expotec.Js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="Expotec.css">
+     <link rel="icon" href="eiffel-tower.png" type="image/png">
+     <title>França e os jogos olímpicos</title>
+     
+    </head>
+    <style>
+        nav 
+        {
+            background-color: #002654;
+            padding: 0.5em 0;
+        }
+        nav ul 
+        {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li 
+        {
+            margin: 0 1em;
+        }
+        nav ul li a 
+        {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main 
+        {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 0 2em;
+        }
+        .athletes-container 
+        {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2em;
+        }
+        .athlete-card 
+        {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .athlete-image 
+        {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .athlete-info {
+            padding: 1em;
+        }
+        .athlete-name {
+            font-size: 1.2em;
+            margin: 0 0 0.5em 0;
+        }
+        .athlete-sport 
+        {
+            text-align:justify ;
+            color: #665;
+            margin: 0;
+        }
+        .search-bar {
+            margin-bottom: 2em;
+            text-align: center;
+        }
+        #search-input {
+            width: 60%;
+            padding: 0.5em;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        </style>
+    <body>
+    
+        <header>
+            <nav>
+               <a  class="logo" href="/">FrenchStyle</a>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+        
+                <ul  class="nav-list">
+                    <li><a href="Expotec.html">Inicio</a></li>
+                    <li><a href="Expotec (1)222222foi.html">França</a></li>
+                    <li><a href="frança2.html">História</a></li>
+                    <li><a href="TRABALHO FEITO.html">Jogadores</a></li>
+                    <li><a href="olimpíadas (1).html">Medalhas</a></li>
+                    <li><a href="dddddddddddddddddddd.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+                <body>
+                    <main>
+                        <div class="search-bar">
+                            <input type="text" id="search-input" placeholder="Procurar Atleta...">
+                        </div>
+                        <div class="athletes-container" id="athletes-grid">
+                            <!-- Les athlètes seront ajoutés ici dynamiquement -->
+                        </div>
+                    </main>
+                <script>
+                const athletes = [
+{ name: "Léon Marchand", sport:"Atleta de Natação:Léon Marchand é um nadador francês nascido em 2002.Em 2023,quebrou o recorde mundial de Michael Phelps nos 400m medley.Nos Jogos Olímpicos de Paris 2024,ganhou quatro medalhas de ouro e uma de bronze."  , image: "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/08/leon-marchand-2-e1722632299122.jpg?w=1200&h=900&crop=1" , image: "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/08/leon-marchand-2-e1722632299122.jpg?w=1200&h=900&crop=1" },
+
+{ name: "Teddy Riner", sport: "Atleta de Judo:  Teddy Riner é um judoca francês nascido em 1989. Ele é um dos maiores judocas de todos os tempos .Riner começou no judô aos cinco anos e permaneceu invicto de 2010 a 2020. ", image: "https://s2-ge.glbimg.com/3hHngupIW1gxQiGQTzHE02gEqLA=/0x0:4218x2779/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2024/P/o/yIBbU5RXqKjpzgfHAOAg/gettyimages-2164985016.jpg" },
+
+                    { name: "Renaud Lavillenie", sport: "Atleta de Atletismo: Renaud Lavillenie é um saltador com vara francês nascido em 1986. Ele ganhou a medalha de ouro nas Olimpíadas de Londres 2012 e a prata no Rio 2016. Lavillenie foi recordista mundial da modalidade com um salto de 6,16 m em 2014.", image: "https://img.olympics.com/images/image/private/t_16-9_760/f_auto/primary/zbcucbv4wbzk8rudnljc" },
+
+                    { name: "Clarisse Agbegnenou", sport: "Atleta de Judo: Clarisse Agbegnenou é uma judoca francesa nascida em 1992. Ela é campeã olímpica e mundial na categoria até 63 kg. Agbegnenou ganhou ouro nas Olimpíadas de Tóquio 2020 e prata no Rio 2016.", image: "data:image/webp;base64,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TkNFIC0gSlVMWSAzMDogQnJvbnplIG1lZGFsaXN0cyBDbGFyaXNzZSBBZ2JlZ25lbm91IG9mIFRlYW0gRnJhbmNlIGNlbGVicmF0ZXMgZHVyaW5nIHRoZSBXb21lbidzIEp1ZG8gV29tZW4gLTYzIGtnIG1lZGFsIGNlcmVtb255IG9uIGRheSBmb3VyIG9mIHRoZSBPbHltcGljIEdhbWVzIFBhcmlzIDIwMjQgYXQgQ2hhbXBzLWRlLU1hcnMgQXJlbmEgb24gSnVseSAzMCwgMjAyNCBpbiBQYXJpcywgRnJhbmNlLiAoUGhvdG8gYnkgU3RlcGggQ2hhbWJlcnMvR2V0dHkgSW1hZ2VzKTIwMjQgR2V0dHkgSW1hZ2VzLAEAAAEAAAAsAQAAAQAAAFhNUCCTBgAAaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/Pgo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIj4KCTxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CgkJPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczpJcHRjNHhtcENvcmU9Imh0dHA6Ly9pcHRjLm9yZy9zdGQvSXB0YzR4bXBDb3JlLzEuMC94bWxucy8iICAgeG1sbnM6R2V0dHlJbWFnZXNHSUZUPSJodHRwOi8veG1wLmdldHR5aW1hZ2VzLmNvbS9naWZ0LzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGx1cz0iaHR0cDovL25zLnVzZXBsdXMub3JnL2xkZi94bXAvMS4wLyIgIHhtbG5zOmlwdGNFeHQ9Imh0dHA6Ly9pcHRjLm9yZy9zdGQvSXB0YzR4bXBFeHQvMjAwOC0wMi0yOS8iIHhtbG5zOnhtcFJpZ2h0cz0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3JpZ2h0cy8iIGRjOlJpZ2h0cz0iMjAyNCBHZXR0eSBJbWFnZXMiIHBob3Rvc2hvcDpDcmVkaXQ9IkdldHR5IEltYWdlcyIgR2V0dHlJbWFnZXNHSUZUOkFzc2V0SUQ9IjIxNjQ0MzE3ODQiIHhtcFJpZ2h0czpXZWJTdGF0ZW1lbnQ9Imh0dHBzOi8vd3d3LmdldHR5aW1hZ2VzLmNvbS9ldWxhP3V0bV9tZWRpdW09b3JnYW5pYyZhbXA7dXRtX3NvdXJjZT1nb29nbGUmYW1wO3V0bV9jYW1wYWlnbj1pcHRjdXJsIiBwbHVzOkRhdGFNaW5pbmc9Imh0dHA6Ly9ucy51c2VwbHVzLm9yZy9sZGYvdm9jYWIvRE1JLVBST0hJQklURUQtRVhDRVBUU0VBUkNIRU5HSU5FSU5ERVhJTkciID4KPGRjOmNyZWF0b3I+PHJkZjpTZXE+PHJkZjpsaT5TdGVwaCBDaGFtYmVyczwvcmRmOmxpPjwvcmRmOlNlcT48L2RjOmNyZWF0b3I+PGRjOmRlc2NyaXB0aW9uPjxyZGY6QWx0PjxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+UEFSSVMsIEZSQU5DRSAtIEpVTFkgMzA6IEJyb256ZSBtZWRhbGlzdHMgQ2xhcmlzc2UgQWdiZWduZW5vdSBvZiBUZWFtIEZyYW5jZSBjZWxlYnJhdGVzIGR1cmluZyB0aGUgV29tZW4mYXBvcztzIEp1ZG8gV29tZW4gLTYzIGtnIG1lZGFsIGNlcmVtb255IG9uIGRheSBmb3VyIG9mIHRoZSBPbHltcGljIEdhbWVzIFBhcmlzIDIwMjQgYXQgQ2hhbXBzLWRlLU1hcnMgQXJlbmEgb24gSnVseSAzMCwgMjAyNCBpbiBQYXJpcywgRnJhbmNlLiAoUGhvdG8gYnkgU3RlcGggQ2hhbWJlcnMvR2V0dHkgSW1hZ2VzKTwvcmRmOmxpPjwvcmRmOkFsdD48L2RjOmRlc2NyaXB0aW9uPgo8cGx1czpMaWNlbnNvcj48cmRmOlNlcT48cmRmOmxpIHJkZjpwYXJzZVR5cGU9J1Jlc291cmNlJz48cGx1czpMaWNlbnNvclVSTD5odHRwczovL3d3dy5nZXR0eWltYWdlcy5jb20vZGV0YWlsLzIxNjQ0MzE3ODQ/dXRtX21lZGl1bT1vcmdhbmljJmFtcDt1dG1fc291cmNlPWdvb2dsZSZhbXA7dXRtX2NhbXBhaWduPWlwdGN1cmw8L3BsdXM6TGljZW5zb3JVUkw+PC9yZGY6bGk+PC9yZGY6U2VxPjwvcGx1czpMaWNlbnNvcj4KCQk8L3JkZjpEZXNjcmlwdGlvbj4KCTwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cjw/eHBhY2tldCBlbmQ9InciPz4KAA==" },
+
+                    { name: "Martin Fourcade", sport: "Atleta de Bliato: Martin Fourcade é um ex-biatleta francês, nascido em 14 de setembro de 1988. Ele é considerado um dos maiores de todos os tempos, com cinco medalhas de ouro olímpicas e treze títulos mundiais.  ", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Martin_Fourcade_octobre_2017.jpg/800px-Martin_Fourcade_octobre_2017.jpg" },
+
+                    { name: "Pauline Ferrand-Prévot", sport: " Atleta de Ciclismo: Pauline Ferrand-Prévot é uma ciclista francesa nascida em 10 de fevereiro de 1992. Ela é conhecida por sua versatilidade, competindo em ciclismo de estrada, mountain bike e ciclocross. Pauline fez história ao ser a primeira a conquistar títulos mundiais simultâneos nessas três disciplinas. ", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz_uzqEmsOhHOUCLaEPQ4qYBWdYY7ahC6-TA&s-" },
+                    
+                    { name: "Nikola Karabatic", sport: " Atleta do Handball: Nikola Karabatić é um jogador de handebol francês, nascido em 1984. Ele é considerado um dos melhores de todos os tempos, com uma carreira de sucesso em clubes como Montpellier, THW Kiel e Paris Saint-Germain. ", image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhp0YdLIRQZ8m0BDobqyFLdtYVzuuWpGVDCp8jmR4Cjf5u0sCfcvp_lHdPonQxAwikemqhIfvM5-pvD7zyKc46GTAIipHtAY6SllnXI8amzZEAB8A3HmnABaS2XJ2qmbS6nokGxc1_VSzw/s1600/nikola-karabatic.jpg" },
+
+                    { name: "Laure Manaudou", sport: " Atleta da Natação :Laure Manaudou, nascida em 9 de outubro de 1986 em Villeurbanne, França, é uma ex-nadadora francesa. Ela ganhou destaque ao conquistar a medalha de ouro nos 400 metros livres nas Olimpíadas de Atenas em 2004, além de uma prata e um bronze em outras provas.", image: "https://static.public.fr/wp-content/uploads/2024/07/559647_060-768x1087.jpg" },
+
+                    { name: "Tony Parker", sport: "Atleta do Basquete: Tony Parker, nascido em 17 de maio de 1982 em Bruges, Bélgica, é um ex-jogador de basquete francês. Ele é mais conhecido por sua carreira no San Antonio Spurs, onde ganhou quatro títulos da NBA e foi eleito MVP das Finais em 2007. ", image: "https://s2.glbimg.com/PiK-KeLYxAG52qdqgdtvNLro37g=/690x460/s2.glbimg.com/qQEcIHwZqvOcjBFFbugUzVF6VvI=/0x0:4374x2916/690x460/s.glbimg.com/es/ge/f/original/2016/08/17/gettyimages-591510708.jpg" },
+
+                    { name: "Wendie Renard", sport: " Atleta de Futebol:Wendie Renard, nascida em 20 de julho de 1990 na Martinica, é uma futebolista francesa que atua como zagueira. Ela joga pelo Lyon desde 2006 e é uma das jogadoras mais condecoradas do futebol feminino, com 14 títulos da liga francesa e 8 títulos da Liga dos Campeões da UEFA ", image: "https://s2-oglobo.glbimg.com/BzPfvw_vXTto4pYY2a32clcyCqI=/0x0:5428x3619/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/g/n/qJpqe7Q4Cgw7GGZqPR2A/103658451-frances-wendie-renard-reacts-during-the-womens-international-football-friendly-match-bet.jpg" },
+
+                    { name: "Kevin Mayer", sport: "Atleta de Atletismo: Kevin Mayer, nascido em 10 de fevereiro de 1992 em Argenteuil, França, é um decatleta francês. Ele é o atual recordista mundial do decatlo, com 9126 pontos, e ganhou duas medalhas de prata olímpicas (Rio 2016 e Tóquio 2020).", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/WK3B0177_1000m_zevenkamp_mayer.jpg/640px-WK3B0177_1000m_zevenkamp_mayer.jpg" },
+
+                    { name: "Amandine Buchard", sport: " Atleta de Judo: Amandine Buchard, nascida em 12 de julho de 1995 em Noisy-le-Sec, França, é uma judoca francesa. Ela ganhou a medalha de prata na categoria meio-leve (-52 kg) nas Olimpíadas de Tóquio 2020 e a medalha de ouro na competição por equipes mistas.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8AZ43310ZPBZt1rgg6e1S4qZ33KFVKlrFlg&s" }
+
+                ];
+                
+                function createAthleteCard(athlete) {
+                    return `
+                        <div class="athlete-card">
+                            <img class="athlete-image" src="${athlete.image}" alt="${athlete.name} en action dans son sport, ${athlete.sport}" width="250" height="250">
+                            <div class="athlete-info">
+                                <h2 class="athlete-name">${athlete.name}</h2>
+                                <p class="athlete-sport">${athlete.sport}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                function displayAthletes(athletesToShow) {
+                    const grid = document.getElementById('athletes-grid');
+                    grid.innerHTML = athletesToShow.map(createAthleteCard).join('');
+                }
+                
+                function filterAthletes(searchTerm) {
+                    return athletes.filter(athlete => 
+                        athlete.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        athlete.sport.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+                }
+                
+                document.addEventListener('DOMContentLoaded', () => {
+                    displayAthletes(athletes);
+                
+                    const searchInput = document.getElementById('search-input');
+                    searchInput.addEventListener('input', (e) => {
+                        const filteredAthletes = filterAthletes(e.target.value);
+                        displayAthletes(filteredAthletes);
+                    });
+                });
+                </script>
+           
+        </main>
+         <script src="Expotec.Js"></script>
+    </body>
+</html>

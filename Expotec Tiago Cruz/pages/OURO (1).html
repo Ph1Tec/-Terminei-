@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OURO</title>
+    <link rel="stylesheet" href="Expotec.css">
+    <link rel="icon" href="eiffel-tower.png" type="image/png">
+    <style>
+
+
+
+.TEXTO
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+     
+    font-size: 30PX;
+}
+
+.containerBotao
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+.button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: blue;
+  transition: all 1000ms;
+  font-size: 15px;
+  overflow: hidden;
+  outline: 2px solid blue;
+}
+
+button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #20398b;
+  box-shadow: 4px 5px 17px -4px blue;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: red;
+  border-color: red;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+button:hover::before {
+  width: 200%;
+}
+
+
+
+
+table
+{
+    width: 800px;
+}
+
+td
+{
+    border: 3px solid black;
+    padding: 10px;
+}
+tr
+{
+    text-align: center;
+   
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.lista
+{
+    
+ display: flex;
+ flex-direction: row;
+ justify-content: space-evenly;
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+           <a  class="logo" href="Expotec.html">FrenchStyle</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+    
+            <ul  class="nav-list">
+                <li><a href="Expotec.html">Inicio</a></li>
+                <li><a href="Expotec (1)222222foi.html">França</a></li>
+                <li><a href="frança2.html">História</a></li>
+                <li><a href="TRABALHO FEITO.html">Jogadores</a></li>
+                <li><a href="olimpíadas (2).html">Medalhas</a></li>
+                <li><a href="dddddddddddddddddddd.html">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>   
+<br>    <BR>
+    <div class="containerBotao">
+   <a href="olimpíadas (2).html"> <button class="button">VOLTAR</button></a>
+    </div>
+    <br><br>
+
+    <div class="TEXTO"> AQUI VOCÊ PODERÁ VER A LISTA COMPLETA DAS MODALIDADES EM QUE A FRANÇA CONQUISTOU MEDALHAS DE OURO 🥇</div>
+
+    <BR><BR>
+    <DIV class="lista">
+    <table>
+        <tr><td>CANOAGEM SLALOM: Nicolas Gestin</td></tr>
+        <tr><td>CICLISMO BMX RACING: Joris Daudet</td></tr>
+        <tr><td>CICLISMO DE PISTA: Bemjamin Thomas</td></tr>
+        <tr><td>CICLISMO MONTAIN BIKE: Pauline Ferrand Prevot</td></tr>
+        <tr><td>ESGRIMA: Manon Apithy-Brunet</td></tr>
+        <tr><td>JUDÔ (2x): Teddy Riner, Equipe Mista</td></tr>
+        <tr><td>NATAÇÃO (4x): Leon Marchard (4x)</td></tr>
+        <tr><td>RUGBY SEVENS: Equipe masculina</td></tr>
+        <tr><td>SURF: Kauli Vaast</td></tr>
+        <tr><td>TAEKWONDO: Althea Laurin</td></tr>
+        <tr><td>TRIATLO: Cassandre Beaugrand</td></tr>
+        <tr><td>VOLEI: Equipe masculina</td></tr>
+       
+
+     
+    </table>
+</DIV>
+
+<br><br>
+<script src="Expotec.Js"></script>
+</body>
+</html>

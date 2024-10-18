@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDALHAS</title>
+    <link rel="stylesheet" href="Expotec.css">
+    <link rel="icon" href="eiffel-tower.png" type="image/png">
+<style>
+
+.container
+{
+ display: flex;
+ 
+ justify-content: space-evenly;
+}
+
+.card {
+ width: 190px;
+ height: 254px;
+ background: white;
+
+ transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --bg: #e8e8e8;
+  --contrast: #e2e0e0;
+
+ 
+ 
+  background-color: var(--bg);
+  border-radius: 35px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: 0.5s;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-conic-gradient(var(--bg) 0.0000001%, var(--grey) 0.000104%) 60% 60%/600% 600%;
+  filter: opacity(10%) contrast(105%);
+}
+
+.card-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 190px;
+  height: 254px;
+  background-color: var(--contrast);
+  border-radius: 30px;
+ 
+  font-size: 30px;
+  font-weight: 900;
+  color: black;
+  text-align: center;
+  font-family: monospace;
+}
+
+
+
+.TEXTO
+{
+    text-align: center;
+    font-family: Impact, fantasy;
+     
+    font-size: 30PX;
+}
+
+.containerBotao
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  
+  cursor: pointer;
+  color: blue;
+  transition: all 1000ms;
+  font-size: 25px;
+  overflow: hidden;
+  outline: 2px solid blue;
+}
+
+button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #20398b;
+  box-shadow: 4px 5px 17px -4px blue;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: red;
+  border-color: red;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+button:hover::before {
+  width: 200%;
+}
+
+
+</style>
+</head>
+<body>
+
+
+  <header>
+    <nav>
+       <a  class="logo" href="Expotec.html">FrenchStyle</a>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
+        <ul  class="nav-list">
+            <li><a href="Expotec.html">Inicio</a></li>
+            <li><a href="Expotec (1)222222foi.html">França</a></li>
+            <li><a href="frança2.html">História</a></li>
+            <li><a href="TRABALHO FEITO.html">Jogadores</a></li>
+            <li><a href="olimpíadas (2).html">Medalhas</a></li>
+            <li><a href="dddddddddddddddddddd.html">Quiz</a></li>
+        </ul>
+    </nav>
+</header> 
+<BR>
+
+
+    
+<DIV CLASS="TEXTO">AQUI ESTÁ O MURAL DE MEDALHAS CONQUISTADAS PELA FRANÇA NAS OLIMPÍADAS DE 2024, VOCÊ PODERA VER O MURAL ABAIXO:</DIV>
+<BR>
+<br>
+<br>
+<DIV class="container">
+
+
+<div class="card">
+  <div class="card-overlay"></div>
+  <div class="card-inner">🥇 <br> <br> 16x</div>
+</div>
+
+<div class="card">
+    <div class="card-overlay"></div>
+    <div class="card-inner">🥈 <br> <br> 26x</div>
+  </div>
+
+  <div class="card">
+    <div class="card-overlay"></div>
+    <div class="card-inner">🥉 <br> <br> 22x</div>
+  </div>
+
+</DIV>
+<br>
+<br>
+<br>
+<DIV CLASS="TEXTO">CLIQUE NOS BOTÕES ABAIXO PARA CONFERIR AS LISTAS DE MODALIDADES:</DIV>
+   <br><br>
+<div class="containerBotao">
+
+  
+<a href="OURO (1).html"><button class="button" value="ouro">  🥇  </button></a>
+
+
+<a href="PRATA (1).html"><button class="button" value="prata"> 🥈 </button></a>
+
+<a href="BRONZE (1).html"><button class="button" value="prata">🥉</button></a>
+
+</div>
+
+
+
+<script src="Expotec.Js"></script>
+</body>
+</html>
